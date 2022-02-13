@@ -4,8 +4,10 @@ const Article = require('./models/article')
 const articleRouter = require('./routes/articles')
 const methodOverride = require('method-override')
 const app = express()
+require('dotenv').config()
+const mongoPassword = process.env.MONGOPASSWORD
 
-mongoose.connect('mongodb+srv://gitleaf:gitleaf112@cluster0.uxjun.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect(`mongodb+srv://gitleaf:${mongoPassword}@cluster0.uxjun.mongodb.net/test?retryWrites=true&w=majority`)
 
 app.set('view engine', 'ejs')
 
