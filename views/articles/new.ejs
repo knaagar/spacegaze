@@ -10,7 +10,7 @@
     <h1>New Article</h1>
     <form action="/articles" method="POST">
         <label for="title">Title</label>
-        <input required type="text" name="title" id="title">
+        <input required type="text" name="title" id="title" value="<%= article.title %>">
         <label for="description">Description</label>
         <input required type="text" name="description" id="description">
         <label for="markdown">Markdown</label>
