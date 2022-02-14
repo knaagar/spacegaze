@@ -5,19 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    <link rel="stylesheet" href="https://css-client1.leafkn.repl.co/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="/articles/new">New Article</a>
-    <% articles.forEach(article => { %>
-        <div style="border: 2px solid rgb(133, 52, 52); padding: 10px; margin: 10px; font-family: 'Courier New', Courier, monospace;">
-            <h1><%= article.title %></h1>
-            <h1><%= article.createdAt.toLocaleDateString() %></h1>
-            <h1><%= article.description %></h1>
-            <a href="articles/<%= article.slug %>">Show</a>
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h1 class="display-3">Hi, I am Megha!</h1>
+          <p class="lead">I welcome you to my blog "xyz"</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <a class="btn btn-success" href="/articles/new">New Article</a>
+      </div>
+    <br>
+    <div class="grid-container">
+        <% articles.forEach(article => { %>
+        <section class="col-1">
+          <div>
+            <h2><%= article.title %></h2>
+            <p class="card-subtitle mb-2 text-muted"><%= article.createdAt.toLocaleDateString() %></p>
+            <p><%= article.description %></p>
+            <div class="wrap">
+            <a class="btn btn-success" href="articles/<%= article.slug %>">Show</a>
             <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
+                <button class="btn btn-info" type="submit">Delete</button>
             </form>
         </div>
-    <% }) %>
+          </div>
+        </section>
+        <% }) %>
+      </div>
 </body>
 </html>

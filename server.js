@@ -10,6 +10,7 @@ const mongoPassword = process.env.MONGOPASSWORD
 mongoose.connect(`mongodb+srv://gitleaf:${mongoPassword}@cluster0.uxjun.mongodb.net/test?retryWrites=true&w=majority`)
 
 app.set('view engine', 'ejs')
+app.use(express.static('public'))
 
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
@@ -22,4 +23,6 @@ app.get('/', async (req, res) => {
 // start at 27:36
 app.use('/articles', articleRouter)
 
-app.listen(3000)
+app.listen(3000, () => {
+    console.log("Listening")
+})

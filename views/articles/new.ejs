@@ -5,19 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New</title>
+    <link rel="stylesheet" href="https://css-client1.leafkn.repl.co/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>New Article</h1>
-    <form action="/articles" method="POST">
-        <label for="title">Title</label>
-        <input required type="text" name="title" id="title" value="<%= article.title %>">
-        <label for="description">Description</label>
-        <input required type="text" name="description" id="description">
-        <label for="markdown">Markdown</label>
-        <input required type="text" name="markdown" id="markdown">
-
-        <a href="/">Cancel</a>
-        <button type="submit">Save</button>
+<body style="margin: 20px;">
+    <h1 style="text-align: center;">New Article</h1>
+    <br>
+    <div class="center">
+    <form action="/articles" method="POST" class="finb">
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input required type="text" class="form-control" name="title" id="title" value="<%= article.title %>">
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea required type="text" class="form-control" name="description" id="description"></textarea>
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="markdown" class="form-label">Markdown</label>
+        <textarea required type="text" class="form-control" name="markdown" id="markdown"></textarea>
+    </div>
+    <br>
+        <a href="/" class="btn btn-primary">Cancel</a>
+        <button type="submit" class="btn btn-success">Save</button>
     </form>
+</div>
 </body>
 </html>

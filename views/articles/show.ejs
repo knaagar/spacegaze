@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article</title>
+    <link rel="stylesheet" href="https://css-client1.leafkn.repl.co/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
 </head>
-<body>
-    <a href="/">All articles</a>
-    <h1><%= article.title %></h1>
-    <i><%= article.createdAt.toLocaleDateString() %></i>
-    <p><%= article.description %></p>
+<body style="margin: 20px;">
+    <div class="text-center">
+        <a href="/" class="btn btn-primary">All articles</a>
+    </div>
 
-    <b><%- article.markdown %></b>
+    <article class="blog-post">
+        <div class="upper">
+        <h1 class="blog-post-title"><%= article.title %></h1>
+        <p class="blog-post-meta">Created on: <%= article.createdAt.toLocaleDateString() %></p>
+        <p class="lead">Description: <%= article.description %></p>
+    </div>
+    <br>
+        <p class="post"><%- article.markdown %></p>
+        <br>
+      </article>
     
 </body>
 </html>
