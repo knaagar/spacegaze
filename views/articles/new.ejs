@@ -7,10 +7,10 @@
     <title>New</title>
     <link rel="stylesheet" href="https://css-client1.leafkn.repl.co/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body style="margin: 20px;">
-    <h1 style="text-align: center;">New Article</h1>
+    <div>
+    <h1 style="text-align: center;" class="art-title">New Article</h1>
     <br>
     <div class="center">
     <form action="/articles" method="POST" class="finb">
@@ -28,10 +28,12 @@
         <label for="markdown" class="form-label">Markdown</label>
         <textarea required type="text" class="form-control" name="markdown" id="markdown"></textarea>
     </div>
-    <br>
-        <a href="/" class="btn btn-primary">Cancel</a>
-        <button type="submit" class="btn btn-success">Save</button>
+    <br><br>
+        <a href="/" class="btn btn-danger">Cancel</a>
+        <button type="submit" class="btn btn-dark">Save</button>
     </form>
 </div>
+</div>
+
 </body>
 </html>

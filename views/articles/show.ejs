@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article</title>
+    <title><%= article.title %></title>
     <link rel="stylesheet" href="https://css-client1.leafkn.repl.co/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body style="margin: 20px;">
-    <div class="text-center">
-        <a href="/" class="btn btn-primary">All articles</a>
+    <div class="wrap">
+        <a href="/" class="btn btn-dark">All articles</a>
+        <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger admin" type="submit">Delete</button>
+          </form>
     </div>
-
     <article class="blog-post">
         <div class="upper">
-        <h1 class="blog-post-title"><%= article.title %></h1>
+        <h1 class="blog-post-title art-title"><%= article.title %></h1>
+        <br>
         <p class="blog-post-meta">Created on: <%= article.createdAt.toLocaleDateString() %></p>
         <p class="lead">Description: <%= article.description %></p>
     </div>

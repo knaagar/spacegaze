@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="https://css-client1.leafkn.repl.co/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceGaze</title>
+  <link rel="stylesheet" href="https://css-client1.leafkn.repl.co/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
+
 <body>
-    <div class="jumbotron jumbotron-fluid text-center">
+  <div class="header">
+    <div class="inner-header flex">
+
+      <div class="jumbotron jumbotron-fluid text-center">
         <div class="container">
-          <h1 class="display-3">Hi, I am Megha!</h1>
-          <p class="lead">I welcome you to my blog "xyz"</p>
+          <h1 class="display-3">Hi, I am <span class="art-title">Megha</span>!</h1>
+          <br>
+          <p class="lead">I welcome you to my blog "SpaceGaze"</p>
+          <br><br>
         </div>
       </div>
-      <div class="text-center">
-        <a class="btn btn-success" href="/articles/new">New Article</a>
-      </div>
-    <br>
-    <div class="grid-container">
-        <% articles.forEach(article => { %>
-        <section class="col-1">
-          <div>
-            <h2><%= article.title %></h2>
-            <p class="card-subtitle mb-2 text-muted"><%= article.createdAt.toLocaleDateString() %></p>
-            <p><%= article.description %></p>
-            <div class="wrap">
-            <a class="btn btn-success" href="articles/<%= article.slug %>">Show</a>
-            <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
-                <button class="btn btn-info" type="submit">Delete</button>
-            </form>
-        </div>
+    </div>
+
+    <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(221, 238, 221,0.7" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(221, 238, 221,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(221, 238, 221,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#ddeedd" />
+        </g>
+      </svg>
+    </div>
+
+  </div>
+  <br><br>
+  <div class="center">
+    <a class="btn btn-dark admin" href="/articles/login">Login</a>
+  </div>
+  <br>
+  <div class="grid-container">
+    <% articles.forEach(article=> { %>
+      <section class="col-1">
+        <div>
+          <h2 class="art-title">
+            <%= article.title %>
+          </h2>
+          <p class="card-subtitle mb-2 text-muted">
+            <%= article.createdAt.toLocaleDateString() %>
+          </p>
+          <p>
+            <%= article.description %>
+          </p>
+          <div class="wrap">
+            <a class="btn btn-dark" href="articles/<%= article.slug %>">Show</a>
+            
           </div>
-        </section>
-        <% }) %>
-      </div>
+        </div>
+      </section>
+      <% }) %>
+  </div>
+  <br><br>
+  <div class="container">
+    <footer class="py-3 my-4">
+      <p class="text-center text-muted">Made by LeafKn © 2022</p>
+    </footer>
+  </div>
+  
 </body>
+
 </html>
