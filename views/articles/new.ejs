@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/jpg" href="https://st2.depositphotos.com/3333565/7404/v/600/depositphotos_74044289-stock-illustration-circle-flat-design-composition-of.jpg" />
+    <link rel="icon" type="image/jpg"
+        href="https://st2.depositphotos.com/3333565/7404/v/600/depositphotos_74044289-stock-illustration-circle-flat-design-composition-of.jpg" />
     <title>New</title>
     <link rel="stylesheet" href="https://css-client1.leafkn.repl.co/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
+
 <body style="margin: 20px;">
     <div>
-    <h1 style="text-align: center;" class="art-title">New Article</h1>
-    <br>
-    <div class="center">
-    <form action="/articles" method="POST" class="finb">
-        <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input required type="text" class="form-control" name="title" id="title" value="<%= article.title %>">
+        <h1 style="text-align: center;" class="art-title">New Article</h1>
+        <br>
+        <div class="center">
+            <form action="/articles" method="POST" class="finb">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input required type="text" class="form-control" name="title" id="title"
+                        value="<%= article.title %>">
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea required type="text" class="form-control" name="description" id="description"></textarea>
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="markdown" class="form-label">Markdown</label>
+                    <textarea required type="text" class="form-control" name="markdown" id="markdown"></textarea>
+                </div>
+                <br><br>
+                <a href="/" class="btn btn-danger">Cancel</a>
+                <button type="submit" class="btn btn-dark">Save</button>
+            </form>
+
+        </div>
+
+        <br><br>
+        <div class="center">
+            <a href="https://www.markdownguide.org/cheat-sheet/" class="btn btn-dark" target="_blank">Markdown
+                Cheatsheet</a>
+        </div>
     </div>
-    <br>
-    <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <textarea required type="text" class="form-control" name="description" id="description"></textarea>
-    </div>
-    <br>
-    <div class="mb-3">
-        <label for="markdown" class="form-label">Markdown</label>
-        <textarea required type="text" class="form-control" name="markdown" id="markdown"></textarea>
-    </div>
-    <br><br>
-        <a href="/" class="btn btn-danger">Cancel</a>
-        <button type="submit" class="btn btn-dark">Save</button>
-    </form>
-</div>
-</div>
 
 </body>
+
 </html>

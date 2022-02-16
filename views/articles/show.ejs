@@ -23,10 +23,10 @@
         <p class="blog-post-meta">Created on: <%= article.createdAt.toLocaleDateString() %></p>
         <p class="lead">Description: <%= article.description %></p>
     </div>
-    <br>
-        <p class="post"><%- article.markdown %></p>
+    <br><hr>
+        <div class="post"><%- article.markdown %></div>
+        <hr>
         <br>
       </article>
-    
 </body>
 </html>
